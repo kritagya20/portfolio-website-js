@@ -1,0 +1,70 @@
+
+body {    
+    background-color: var(--light);
+}
+
+.blog-heading {
+    display: flex;
+    flex-direction: column;
+    -moz-box-align: center;
+    position: relative;
+    width: 100%;
+    padding: 10vh 0 0 0;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.blog-heading h1 {    
+    color: var(--dark);
+    margin: 0 auto;
+}
+
+.blog-wrapper {
+    margin: 0px auto;
+    padding: 5vh 0px;
+    max-width: 1000px;
+}
+
+.blog-posts .post-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    margin: 2rem 2rem;
+    border-radius: 5px;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+}
+
+.blog-posts .post-card::after {
+    content: "";
+    background: var(--black);
+    margin: 2rem auto 0 auto;
+    height: 2.5px;
+    width: 100%;    
+}
+
+.post-card-link {
+    color: var(--dark);
+}
+
+.post-card-meta-date {
+    color: var(--gray);
+}
+
+.post-card-title {
+    text-align: left;
+    margin: .5rem 0;
+    line-height: 1;
+    padding: 0;
+}
+
+.blog-posts .post-card:hover .post-card-title {
+    color: var(--purple);
+}
+
+.post-card-meta-date {
+    font-size: var(--fs5);
+}
