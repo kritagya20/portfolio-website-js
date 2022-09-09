@@ -1,7 +1,9 @@
 //NAVBAR SECTION
 
 window.addEventListener('scroll', () => {
-  document.querySelector('.primary-header').classList.toggle('window-scroll', window.scrollY >1)
+  document.querySelector('.primary-header').classList.toggle('window-scroll', window.scrollY >1);
+  document.querySelector('.primary-header').classList.toggle('gradient__bg', window.scrollY >1);
+
   // window.scrollY > 1 defines the scroll of Y axis in pixels after which is event listner will fire 
 })
 
