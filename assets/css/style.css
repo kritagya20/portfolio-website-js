@@ -78,7 +78,7 @@
 }
 
 body.home {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-family: var(--ff1);
     line-height: 1.4;
@@ -88,6 +88,13 @@ body.home {
     overflow-y: scroll;
     overflow-x: hidden;
     background: linear-gradient(96.3deg, #111 2%, #121212 33.84%, #1E3A8A 162.79%);
+
+}
+
+.binder {
+    max-width: 1600px;
+    background: transparent;
+    margin: 0 auto;
 }
 
 .gradient__bg {
@@ -115,9 +122,7 @@ body.home {
 }
 
 main {
-    padding: 0 1.5vw;
-    max-width: 1400px;
-
+    padding: 0 1rem;
 }
 
 .container {
@@ -132,8 +137,8 @@ main {
 }
 
 .home-empty-bg-tags {
-    width: 15vw;
-    height:15vw;
+    width: 10rem;
+    height:10rem;
     left: 100px;
     top: -250px;
 }
@@ -141,8 +146,8 @@ main {
 .skills-empty-bg-tags,
 .projects-empty-bg-tags,
 .blogs-empty-bg-tags {
-    width: 10vw;
-    height:10vw;
+    width: 6rem;
+    height:6rem;
     top: 50px;
     right: -100px;
 }
@@ -150,8 +155,8 @@ main {
 .recent-work-empty-bg-tags,
 .contact-empty-bg-tags,
 .about-empty-bg-tags {
-    width: 10vw;
-    height:10vw;
+    width: 6rem;
+    height:6rem;
     top: -100px;
     left: -200px;
 }
@@ -302,15 +307,19 @@ img {
 /* ---------------HEADER------------------ */
 .primary-header {
     background-color: transparent;
-    width: 100vw;
+    width: 100%;
     height: 4rem;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 11;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2.5vw;
+    padding: 0 1rem;
+}
+
+.nav-toggle-container {
+    position: relative;
 }
 
 .nav-toggle {
@@ -384,8 +393,9 @@ img {
 .home {
     display: flex;  
     flex-direction: column;
-    gap: 2vh;
-    padding: 10vh 1.5rem;
+    gap: 1.5rem;
+    padding: 1.5rem 1.5rem;
+    padding-bottom: 0;
     text-align: center;
     justify-content: space-around;
     margin: 2rem 0;
@@ -422,7 +432,7 @@ img {
 }
 
 .home .left p {
-    max-width: 75vw;
+    max-width: 75ch;
     margin: 0 auto;
 }
 
@@ -430,7 +440,7 @@ img {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-    gap: 15vw;
+    gap: 15%;
 }
 
 .home-btn .btn.explore {
@@ -443,7 +453,7 @@ img {
 }
 
 .home .right .grpahic-img {
-    width: 40vw;
+    max-width: 25rem;
 }
 
 @media (min-width: 800px) {
@@ -466,11 +476,11 @@ img {
         display: flex;  
         flex-direction: row;
         gap: 3rem;
-        padding: 0rem  5vw 0rem 1.5vw;
+        padding: 0;
         justify-content: space-between;
         text-align: left;
         align-items: center;
-        margin-top: 15vh;
+        margin-top: 5rem;
     }
 
     .home .left {
@@ -478,7 +488,7 @@ img {
     }
 
     .home .left h1{
-        margin-bottom: 2vh;
+        margin-bottom: 2%;
     }
 
     .home .left h1 .name{
@@ -493,8 +503,8 @@ img {
     .home-btn {
         justify-content: flex-start;
         gap: 5rem;
-        margin-top: 5vh;
-    }
+        margin-top: 5%;
+    }  
 
 }
 /* -------------------------------------- */
@@ -507,10 +517,11 @@ img {
     align-items: center;
     margin: 0px auto;
     padding: 4rem 0 1rem 0;
+    margin-bottom: 2rem;
 }    
 
 .skills h1 {
-    margin-bottom: 4vh;
+    margin-bottom: 4%;
     text-transform: uppercase;
 }
 
@@ -524,7 +535,7 @@ img {
         "bootstrap . material-ui . tailwind" 
         ". vscode . git ."
     ; 
-    gap: 3vh 1vw;
+    gap: 3% 1%;
 }
 
 .html {
@@ -594,7 +605,7 @@ img {
 }
 
 .skills .image {
-    width: 4vh;
+    width: 1.5rem;
     stroke: var(--light);
 }
 
@@ -605,12 +616,11 @@ img {
 @media screen and (min-width: 800px) {
     
     .skills .image {
-        width: 3vw;
+        width: 2rem;
     }
-
     
     .skills-grid {
-        gap: 2vh 3vw;
+        gap: 2% 3vw;
     }
 }
 
@@ -623,25 +633,26 @@ img {
     align-items: center;
     position: relative;
     margin: 0px auto;
-    padding: 4rem 1rem 1vh 1rem;
+    padding: 4rem 1rem 1% 1rem;
 }
 
 .about h1 {
-    margin: 1vh 0 5vh 0;
+    margin: 1% 0 5% 0;
 }  
 
 .about .inner {
     display: grid;
     grid-template-areas: 
-        "image"
-        "text";
-    gap: 5vh;
+        "text"
+        "image";
+    gap: 3rem;
     justify-items: center;
+    align-items: center;
 }
 
 .about .text {
     grid-area: text;
-    max-width: 75%;
+    max-width: 75ch;
 }
 
 .about .image {
@@ -650,7 +661,7 @@ img {
 
 
 .about .inner p {
-    text-align: left;
+    text-align: justify;
 }
 
 .about .inner .card {
@@ -688,13 +699,12 @@ img {
 
 @media (min-width: 800px) {
     .about {
-        padding: 4rem 5vw 1rem 5vw;
+        padding: 4rem 5% 1rem 5%;
     }   
 
     .about .inner {
         grid-template-areas: "image text";
-        gap: 10vw;
-
+        gap: 10%;
     }
 
     .about .text {
@@ -731,9 +741,9 @@ img {
     padding: 0px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, .20fr));
-    gap: .5vh 5vw;
+    gap: .5% 6%;
     justify-content: center;
-    margin: 2.5rem auto 0 auto;
+    margin: 2.5rem 2% 0 2%;
     position: relative;
 }
 
@@ -749,17 +759,16 @@ img {
     grid-area: 3 / 4 / 4 / -1;
     display: flex;
     flex-direction: column;
-    gap: 4vh;
+    gap: 2.5rem;
     background: var(--dark);
     z-index: 1;
-    padding: 1.2vh 1vw;
-        
+    padding: .75rem 1rem;        
 }
 
 .projects-grid .individual-project .project-image-block {
     box-shadow: 0 10px 30px -15px var(--purple);
     transition: var(--transition);
-    grid-area: 1 / 1 / -1 / 10;
+    grid-area: 1 / 1 / -1 / -1;
     z-index: 0;        
     background: transparent;
     transform: rotate(5deg);
@@ -780,11 +789,11 @@ img {
 .individual-project .project-content-block header {
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: .5rem;
 }
 
 .project-title {
-    margin: .5vh 0 0 0;
+    margin: .5rem 0 0 0;
 }
 
 .project-title *{
@@ -803,7 +812,7 @@ img {
 
 .individual-project .project-content-block .project-tech-list {
     display: flex;
-    gap: 1vw;
+    gap: 10px;
     flex-wrap: wrap;
     color: var(--gray);
     font-size: var(--fssmall);
@@ -850,7 +859,15 @@ img {
 
 @media (min-width: 800px) {
     .projects .projects-grid {
-        grid-template-columns: minmax(120px, 30vw) minmax(250px, 30vw);
+        grid-template-columns: minmax(120px, 40%) minmax(250px, 40%);
+    }
+
+    .projects-grid .individual-project .project-content-block {
+        grid-area: 3 / 4 / 4 / -1;      
+    }
+    
+    .projects-grid .individual-project .project-image-block {
+        grid-area: 1 / 1 / -1 / 10;
     }
 }
 
@@ -865,7 +882,7 @@ img {
     justify-content: center;
     height: fit-content;   
     margin: 0px auto;
-    padding: 10vh 0 0 0;
+    padding: 5rem 0 0 0;
 }
 
 .recent-work .wrapper {
@@ -906,7 +923,6 @@ img {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;    
-    box-shadow: 0px 2px 10px var(--gray);
     border-block: 1px solid var(--white);
     border-radius: 2px;
 }
@@ -921,13 +937,14 @@ img {
 }
 
 .recent-work .inner {
-    width: 100%;
+    max-width: 75%;
     height: auto;
     padding: 10px 5px;
+    margin: 0 auto;
 }
 
 .recent-work .inner h2 {
-    text-align: left;
+    text-align: center;
     margin-bottom: 2px;
     font-weight: 500;
     line-height: 1.3;
@@ -960,15 +977,17 @@ img {
 }
 
 @media (min-width: 800px) {
-    .recent-work {
-        height: 90vh;   
-    }
 
     .recent-work .wrapper {
         display: grid;
         grid-template-areas: "tab content";
         gap: 3.125rem;
         padding: 2.5rem 3.125rem 2.5rem 2.5rem;
+    }
+
+    .recent-work .inner {
+        max-width: 100%;
+        margin: 0;
     }
 
     .recent-work .tab-list {
@@ -985,6 +1004,10 @@ img {
         box-shadow: none;
         border-radius: 0;
     }
+
+    .recent-work .inner h2 {
+        text-align: left;
+    }
 }
 
 /* -------------------------------------- */
@@ -993,7 +1016,7 @@ img {
 .blogs{
     margin: 0px auto;
     padding: 1rem;
-    padding-top: 5vh;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     position: relative;    
@@ -1009,11 +1032,11 @@ img {
     width: 100%;
     list-style: none;
     padding: 0;
-    margin: .5vh auto;
+    margin: .25rem auto;
     display: grid;
     justify-content: space-around;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 5vh 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(250px, .75fr));
+    gap: 2.5rem 4%;
     position: relative;
 }
 
@@ -1042,7 +1065,7 @@ img {
     justify-content: space-between;
     text-align: justify;
     height: fit-content;
-    padding: 1vh 1.5vw;
+    padding: 1rem;
     cursor: pointer;
 }
 
@@ -1072,22 +1095,13 @@ img {
 @media (min-width: 800px) {
 
     .blogs{
-        padding-top: 15vh;  
+        padding-top: 2rem;  
     }
     
 
     .blogs .blogs-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 400px));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
         justify-content: space-evenly;
-    }
-
-    .blogs-head h2 {
-        margin: 4vh auto 0 auto;
-        letter-spacing: 1.5px;
-    }
-
-    .individual-blog .blog-inner {
-        padding: 1rem;
     }
 
 }
@@ -1097,7 +1111,7 @@ img {
 .contact {
     margin: 0 auto ;
     text-align: center;
-    padding-top: 5rem;
+    padding: 5rem 0 2rem 0;
 }   
 
 .contact .title {
@@ -1121,28 +1135,29 @@ img {
 }
 
 .contact-wrapper {
-    margin: 8vh  0 ;
-    padding: 0 0 2vh 0;
+    margin: 4rem  auto;
+    padding: 1rem 2%;
     border-radius: 1rem;
     background-color: var(--light);
     display: block;
     height: fit-content;
-    max-width: 1000px;
+    max-width: 80%;
     align-items: center;
 }
 
 .contact-aside {
     background-color: var(--dark);
-    padding: 2vw 2vh;
-    margin-bottom: 2vh;
+    padding: .75rem 5vw;
+    margin-bottom: .2rem;
     position: relative;
-    bottom: 5vh;
-    width: fit-content;
-    width: 70vw;
-    border-radius: 1rem;
+    bottom: 2rem;
+    max-width: 85%;
+    min-width: 280px;
+    border-radius: .2rem;
     margin-inline: auto;
     box-shadow: 4px 1px 10px var(--gray-dark);
-    min-width: 12rem;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .form-image {
@@ -1150,32 +1165,26 @@ img {
     max-width: 12rem;
 }
 
-.contact .underliner {
-    font-weight: 600;
-    color: var(--white);
-    font-family: var(--ff1);
-    font-size: var(--fs3);
-}
-
 .contact .content {
-    margin: 1vh 0;
+    margin: .75rem 0;
 }
 
 .contact-details {
-    margin: 1vh 0;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    gap: .2vh;
+    margin: .5rem auto;
+    gap: .25rem;
 }
+
 
 .contact-details li {
     display: flex;
     align-items: center;
     font-size: var(--fsa);
     font-family: var(--ff3);
-    gap: 1vw;
-    align-items: center;
+    gap: 5px;
     color: var(--white);
 }
 
@@ -1187,40 +1196,48 @@ img {
 
 .contact-details li .mail-icon-svg{
     fill: var(--light);
-    width: 1.5rem;
+    width: 1.25rem;
 }
 
 .contact-details li .location-icon-svg{
     fill: var(--light);
-    width: .7rem;
+    width: .5rem;
 }
 
 .contact-details li .phone-icon-svg{
     fill: var(--light);
-    width: 1rem;
+    width: .855rem;
 }
 
-/* ---------------------FORM--------------------- */
+/* ---FORM---- */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1vh 1vw;
-    width: 80vw;
+    gap: .25rem 1%;
+    max-width: 100%;
     margin: 0 auto;
+}
+
+.form-heading {
+    margin-bottom: 1rem;
 }
 
 .form-name {
     display: flex;
-    gap: 1vw;
+    gap: 1%;
 }
-
 
 .contact-form input[type="text"] {
     width: 50%;
 }
 
+.contact-form input[type="email"],
+.contact-form  textarea {
+    max-width: 100%;
+}
+
+
 input, textarea {
-    width: 100%;
     padding: .6rem;
     background: var(--dark);
     color: var(--white);
@@ -1233,8 +1250,9 @@ input, textarea {
     background-color: transparent;
     border: 2px solid var(--white);
     border-radius: 5px;
-    padding: .75rem .9rem;
-    font-size: 1rem;
+    padding: .5rem .75rem;
+    margin: 1rem auto;
+    font-size: .75rem;
     font-weight: 400;
     letter-spacing: .5px;
     font-family: var(--ff1);
@@ -1242,7 +1260,6 @@ input, textarea {
     cursor: pointer;
     transition: var(--transition);
     box-shadow: 5px 5px 12px var(--gray-dark);
-
 }
 
 .contact .email-link:hover {
@@ -1251,25 +1268,22 @@ input, textarea {
 }
 
 @media (min-width: 800px) {
-    .contact {
-        max-width: 1200px;
-    }
 
     .title::after {
-        width: 40vw;
+        width: 40%;
     }
 
     .contact-wrapper {
-        margin: 10vh auto 0 auto;
-        padding: 3vh 2vw;
+        margin: 5rem 0 0 0;
+        padding: 1.5rem 5%;
         padding-bottom: 0;
         display: grid;
         grid-template-areas: 'form aside';
         grid-template-columns: 60% 40%;
-        gap: 2vw;   
+        gap: 3%;   
         justify-content: space-between;   
-        max-height: 30rem;
         align-items: initial;
+        max-width: 100%;
     }
 
     .contact-aside {
@@ -1283,34 +1297,40 @@ input, textarea {
 
     .contact-aside {
         margin: 0;
-        margin-right: 1.5vw;
+        margin-right: 1%;
         padding: 1rem;
         position: relative;
-        bottom: 10vh;
+        bottom: 5rem;
         width: fit-content;
         box-shadow: 2px 6px 15px var(--gray-dark);
+        flex-direction: column;
+    }
 
+    .contact-details {
+        margin: 1rem auto;
     }
 
     .form-image {
         max-width: 16rem;
     }
 
-    .contact-details {
-        align-items: initial;
-        gap: .5vh;
-    }
-
     .contact-form,
     .form-name {
-        gap: 2vh 1vw;
+        gap: .75rem .25rem;
     }
 
+    .contact-form input[type="text"] {
+        width: 50%;
+    }
 
     input, textarea {
         padding: 1rem .5rem;
     }
 
+    .contact .email-link {
+        margin: .5rem 0;
+        font-size: 1rem;   
+    }
 }
 /* -------------------------------------- */
 
@@ -1341,7 +1361,7 @@ small {
     width: 40px;
     position: fixed;
     bottom: 0px;
-    left: 3vw;
+    left: 2.5%;
     right: auto;
     z-index: 10;
 }
@@ -1426,8 +1446,8 @@ svg.feather {
         position: fixed;
         inset: 0 0 0 50%;
         flex-direction: column;
-        padding: min(25vh, 8rem) 1rem;
-        --gap: 4vh;
+        padding: 6rem 1rem;
+        gap: 1rem;
         z-index: 1000;
         background: var(--indigo);
         transform: translateX(100%);
