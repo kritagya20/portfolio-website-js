@@ -1,6 +1,6 @@
 
-body {    
-    background-color: var(--light);
+.blog-page {
+    background: linear-gradient(96.3deg, #111 2%, #121212 33.84%, #1E3A8A 162.79%);
 }
 
 .blog-heading {
@@ -9,19 +9,24 @@ body {
     -moz-box-align: center;
     position: relative;
     width: 100%;
-    padding: 10vh 0 0 0;
+    padding: 2.5rem 0 0 0;
     white-space: nowrap;
     z-index: 2;
 }
 
 .blog-heading h1 {    
-    color: var(--dark);
+    background: linear-gradient(to left, #6610f2, #6920e9, #6b2be0, #6d33d6, #6e3acd, #8039c5, #8f3abe, #9b3bb7, #b437ad, #c935a3, #da3797, #e83e8c);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0 auto;
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 8rem);
 }
 
 .blog-wrapper {
     margin: 0px auto;
-    padding: 5vh 0px;
+    padding: 1rem 0px;
     max-width: 1000px;
 }
 
@@ -31,7 +36,7 @@ body {
     align-items: center;
     justify-content: space-between;
     height: fit-content;
-    margin: 2rem 2rem;
+    margin: 2rem;
     border-radius: 5px;
     transition: var(--transition);
     cursor: pointer;
@@ -40,10 +45,15 @@ body {
 
 .blog-posts .post-card::after {
     content: "";
-    background: var(--black);
+    background: var(--white);
     margin: 2rem auto 0 auto;
     height: 2.5px;
     width: 100%;    
+}
+
+.blog-posts .post-card-title,
+.post-card-description {
+    color: var(--white);
 }
 
 .post-card-link {
