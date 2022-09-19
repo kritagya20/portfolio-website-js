@@ -1,3 +1,4 @@
+try {
 const projectContainer =  document.querySelectorAll('.project-card'); //selecting all project containers to append different porject data in it
 
 projects.forEach((project) => {
@@ -52,3 +53,32 @@ projects.forEach((project) => {
         }    
     });
 });
+}catch (e){
+    console.log(`Error caught fetching the project data: ${e}`);
+}
+
+try {
+//INTERSECTION OBSERVER
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -150px 0px"
+};
+const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll){
+  entries.forEach(entry => {
+    if(!entry.isIntersecting){
+      return;
+    } else {
+      entry.target.classList.add('appear');
+      appearOnScroll.unobserve(entry.target);
+    }
+  })
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+}catch (e){
+    console.log(`Error caught in intersection obeserver of project archive page: ${e}`);
+}

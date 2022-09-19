@@ -33,7 +33,7 @@ const projects = [
             tl3: 'Javascript',
             tl4: 'API'
         },
-        githubLink: 'https://github.com/kritagya20',
+        githubLink: 'https://github.com/kritagya20/Weather-App',
         image: './assets/project-archieves/weather-app-demo-image.jpg'
     },
     {
@@ -46,7 +46,7 @@ const projects = [
             tl3: 'Javascript',
             tl4: 'API'
         },
-        githubLink: 'https://github.com/kritagya20',
+        githubLink: 'https://github.com/kritagya20/YouTube-UI-Clone/',
         image: './assets/project-archieves/youtube-clone-demo-image.jpg'
     },
     {
