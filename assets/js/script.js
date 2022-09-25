@@ -113,6 +113,9 @@ try {
   const email = document.getElementById("email");
   const message = document.getElementById("message");
   const controls = document.querySelectorAll(".form-control");
+  const loadingSpinner = document.getElementById('spinner'); //LOADING SPINNER
+  const binder = document.querySelector('#binder');
+  const body = document.querySelector('body');
 
   //Show input error messages
   function showError(input, message) {
@@ -146,21 +149,12 @@ try {
     const re =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(input.value.trim())) {
-      showSucces(input);
+      showSucces(input);     
+      return true;
     } else {
       showError(input, "Email is invalid");
+      return false;
     }
-  }
-
-  //checkRequired fields
-  function checkRequired(inputArr) {
-    inputArr.forEach(function (input) {
-      if (input.value.trim() === "") {
-        showError(input, `${getFieldName(input)} is required`);
-      } else {
-        showSucces(input);
-      }
-    });
   }
 
   //check input Length
@@ -170,13 +164,16 @@ try {
         input,
         `${getFieldName(input)} must be at least ${min} characters`
       );
+      return false;
     } else if (input.value.trim().length > max) {
       showError(
         input,
         `${getFieldName(input)} must be less than ${max} characters`
       );
+      return false;
     } else {
       showSucces(input);
+      return true;
     }
   }
 
@@ -185,37 +182,56 @@ try {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
   }
 
-  //Event Listeners
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    removeClass();
-    checkRequired([firstName, lastName, email, message]);
-    checkLength(firstName, 3, 15);
-    checkLength(lastName, 3, 20);
-    checkLength(message, 5, 500);
-    checkEmail(email);
-
+  //sending email
+  function sendEmail () {    
+    const serivce_id = "service_ep5wsq2";
+    const template_id = "template_9qk7m26";
     let formData = {
       firstName: firstName.value,
       lastName: lastName.value,
       email: email.value,
       message: message.value,
     };
-
-    const serivce_id = "service_ep5wsq2";
-    const template_id = "template_9qk7m26";
+    loadingSpinner.style.display = "flex";
+    binder.style.opacity = '0.2';
+    body.style.overflowY = 'hidden';
 
     emailjs
       .send(serivce_id, template_id, formData)
       .then((res) => {
-        alert("Email sent");
-        console.log(res);
+        binder.style.opacity = '1';
+        body.style.overflowY = 'scroll';
+        loadingSpinner.style.display = "none";
+        alert("Your Response Has Been Recorded Successfully.");
         firstName.value = "";
         lastName.value = "";
         email.value = "";
         message.value = "";
       })
-      .catch((e) => console.log(`Error caught in submitting form: ${e}`));
+    .catch((e) => console.log(`Error caught in submitting form: ${e}`));
+  }
+
+  //Event Listeners
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    removeClass();
+
+    let A = checkLength(firstName, 3, 15);
+    let B = checkLength(lastName, 3, 20);
+    let C = checkLength(message, 5, 500);
+    let D = checkEmail(email);
+
+    if ( 
+      A == true && 
+      B == true && 
+      C == true && 
+      D == true 
+    ){      
+      sendEmail();
+    }
+    else { 
+      return;
+    }
   });
 } catch (e) {
   console.log(`Error caught in form section: ${e}`);

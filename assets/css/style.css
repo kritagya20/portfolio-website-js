@@ -52,7 +52,7 @@
     /*FONT-SIZE*/
     --title: clamp(1.7rem, 2.5vw, 2.5rem) ;
     --fs1: clamp(1.6rem, 2.5vw, 2.25rem);
-    --fs2: clamp(1.45rem, 2vw , 1.75rem);
+    --fs2: clamp(1.5rem, 2vw , 1.75rem);
     --fs3: clamp(1rem, 1.7vw, 1.3rem);
     --fs4: clamp(0.75rem, 1.4vw, 1rem);
     --fs5: clamp(0.75rem, .2vw, .85rem);
@@ -79,10 +79,12 @@
 body.home {
     margin: 0 auto;
     padding: 0;
+    width: 100%;
     font-family: var(--ff1);
     line-height: 1.4;
     color: var(--white);
     display: flex;
+    position: relative;
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -91,6 +93,7 @@ body.home {
 
 .binder {
     max-width: 1600px;
+    width: 100%;
     background: transparent;
     margin: 0 auto;
 }
@@ -132,6 +135,31 @@ body.home {
 
 main {
     padding: 0 1rem;
+}
+
+#spinner {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    aspect-ratio: 1;
+    bottom: 5%;
+    left: 50%;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: loading-spinner .8s linear infinite;
+    z-index: 999999999999;
+    display: none;
+}
+
+@keyframes loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
 }
 
 .container {
@@ -218,7 +246,6 @@ img {
     object-fit: cover;
 }
 
-
 .heading {
     display: flex;
     -moz-box-align: center;
@@ -268,6 +295,11 @@ img {
     .inline-link:hover::after {
         width: 100%;
     }
+
+    #spinner {
+        width: 5rem;
+        bottom: 10%;
+    }
 }
 
 /* --------------------------------- */
@@ -285,10 +317,6 @@ img {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-}
-
-.nav-toggle-container {
-    position: relative;
 }
 
 .nav-toggle {
@@ -726,7 +754,7 @@ img {
     }
 
     .about .card img {
-        max-width: 14rem;
+        max-width: 15rem;
         min-width: 12rem;
     }
 
@@ -754,8 +782,7 @@ img {
     list-style: none;
     padding: 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, .20fr));
-    
+    grid-template-columns: repeat(auto-fit, minmax(275px, .20fr));    
     gap: 2% 0;
     justify-content: center;
     margin: 2.5rem 2% 0 2%;
@@ -850,13 +877,7 @@ img {
     justify-content:space-between;
 }
 
-.individual-project .project-links .github-link a.github svg {
-    max-width: 1.25rem;
-    aspect-ratio: 1;
-    stroke: var(--white);
-    transition: var(--transition);
-}
-
+.individual-project .project-links .github-link a.github svg,
 .individual-project .project-links .external-link a.external svg {
     width: 22px;
     height: 22px;
@@ -1577,10 +1598,12 @@ svg.feather {
 @media screen and (max-width: 800px) {
 
     .primary-navigation {
-        position: fixed;
+        position: absolute;
+        height: fit-content;
         inset: 0 0 0 50%;
         flex-direction: column;
-        padding: 6rem 1rem;
+        padding: 20%;
+        padding-bottom: 10%;
         gap: 1rem;
         z-index: 1000;
         background: var(--indigo);
@@ -1598,14 +1621,14 @@ svg.feather {
         width: 25px;
         cursor:pointer;
         background: transparent;
-        position: fixed;
+        position: absolute;
         z-index: 99999;
         aspect-ratio: 1;
         top: 1rem;
-        right: 2.5rem;
+        right: 2rem;
     }
 
-    .nav-toggle  .line{
+    .nav-toggle .line{
         background: var(--white);
         border-radius:10px;
         height:3px;
