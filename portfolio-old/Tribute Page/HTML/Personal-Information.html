@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- CSS- -->
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/responsive.css">
+        <style>
+            body{
+                background-image: linear-gradient(to right top, #000, #000, #040405, #040405, #060708);
+                padding: 8rem;
+            }
+            .table{
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 3%;
+                border-radius: 0%;
+                border-style: solid;
+                border-width: 0rem;
+                box-shadow: 0.1rem 0rem 0.2rem #A0D6F8; /* offset-x | offset-y | blur-radius | color */
+                background-color: #020221;
+                color: white;
+            }
+            .table:hover{
+                transition-property: background-color ;
+                transition-timing-function: linear;
+                transition-delay: 0.2s;
+                transition-duration: 0.3s;
+                background-color: #020221;
+
+            }
+            #table-1{
+                border-style: double;
+                border-radius: 2%;
+                border-color: #1193E4;
+            }
+            #table-1 .cell{
+                padding: 1%;
+                width: 500px;
+                font-size: x-large;
+            }
+            #table-1 .t-header{
+                font-size: xx-large;
+                font-family: 'Slabo 27px', serif;
+            }
+        </style>
+
+        <!-- bootstrap--->
+        <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+
+    
+
+        <!-- Google Font-START -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Rampart+One&display=swap" rel="stylesheet">     
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Fira+Code:wght@300&family=Rampart+One&display=swap" rel="stylesheet">    
+        <!-- ICON-START --> 
+        <script src="https://kit.fontawesome.com/1b1d9cd629.js" crossorigin="anonymous"></script>
+
+        <!-- RESPONSIVE-DESIGN -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    </head>
+    <body>
+        <section class="table-expand" >
+            <table class="table " id="table-1" >
+                <tr class="row">
+                    <th class="cell t-header" colspan="3">Personal Information</th>
+                </tr>
+                <tr class="row">
+                    <td class="cell" colspan="">Full Name</td>
+                    <td class="cell">Mahendra Singh Dhoni</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">Born</td>
+                    <td class="cell">7 July 1981 (age 40)
+                        Ranchi, Bihar (now in Jharkhand), India
+                        </td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">Nickname</td>
+                    <td class="cell">Mahi, Captain Cool, MSD, Thala</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">Height</td>
+                    <td class="cell">1.80 m (5 ft 11 in)</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">Batting</td>
+                    <td class="cell">Right-handed</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">Bowling</td>
+                    <td class="cell">Right-arm medium</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">Role</td>
+                    <td class="cell">Wicket-keeper batsman</td>
+                </tr>
+                <tr class="row">
+                    <td class="cell">Spouse</td>
+                    <td class="cell">Sakshi Dhoni </td>
+                </tr>
+            </table>
+        </section>
+    </body>
+
+</html>

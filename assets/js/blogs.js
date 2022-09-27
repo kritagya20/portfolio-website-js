@@ -8,7 +8,7 @@ try {
         const Content = `     
             <li class="post-card">
                 <article>
-                    <a href="${blog.link}" class="post-card-link">
+                    <a href="${blog.link}" target="_blank" class="post-card-link">
                         <div class="post-card-meta">
                             <time class="post-card-meta-date">${blog.metaData}</time>
                         </div>

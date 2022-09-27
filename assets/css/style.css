@@ -78,7 +78,6 @@
 
 body.home {
     margin: 0 auto;
-    padding: 0;
     width: 100%;
     font-family: var(--ff1);
     line-height: 1.4;
@@ -96,6 +95,7 @@ body.home {
     width: 100%;
     background: transparent;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .gradient__bg {
@@ -1124,6 +1124,7 @@ img {
     margin-top: .25rem;
     font-size: .8rem;
     color: var(--white);
+    padding: 1rem 0;
 }
 
 .individual-blog footer {
@@ -1159,12 +1160,12 @@ img {
     }
 
     .blogs .blogs-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 400px));
         justify-content: space-evenly;
     }
 
     .individual-blog:hover {
-        transform: translateY(-.25rem);
+        transform: translateY(-.2rem);
     }
     
     .individual-blog:hover img {
