@@ -25,36 +25,36 @@ navToggle.addEventListener("click", () => {
   }
 });
 
-//HOME SECTION - AUTO-TYPING
-try {
-  const texts = ["Web-Developer   ", "Web-Designer   "]; //array of auto-typing text
-  let count = 0;
-  let index = 0;
-  let currentText = "";
-  let letter = "";
+// //HOME SECTION - AUTO-TYPING
+// try {
+//   const texts = ["Web-Developer   ", "Web-Designer   "]; //array of auto-typing text
+//   let count = 0;
+//   let index = 0;
+//   let currentText = "";
+//   let letter = "";
 
-  (function typing() {
-    //connecting the end index to initial index of array
-    if (count === texts.length) {
-      count = 0;
-    }
+//   (function typing() {
+//     //connecting the end index to initial index of array
+//     if (count === texts.length) {
+//       count = 0;
+//     }
 
-    currentText = texts[count]; //assigning the selected word to the current-text
-    letter = currentText.slice(0, ++index); //assigning every character from the word currently selected
-    document.querySelector(".auto-typing").textContent = letter; //displaying the character assigned to letter on screen
+//     currentText = texts[count]; //assigning the selected word to the current-text
+//     letter = currentText.slice(0, ++index); //assigning every character from the word currently selected
+//     document.querySelector(".auto-typing").textContent = letter; //displaying the character assigned to letter on screen
 
-    //switching the letter when all the characters of a letter are displayed on screen
-    if (letter.length === currentText.length) {
-      count++; //selecting the next word from array
-      index = 0; //reseting the index count to 0
-    }
+//     //switching the letter when all the characters of a letter are displayed on screen
+//     if (letter.length === currentText.length) {
+//       count++; //selecting the next word from array
+//       index = 0; //reseting the index count to 0
+//     }
 
-    //calling typing-function at every 300 milli-seconds
-    setTimeout(typing, 200);
-  })();
-} catch (e) {
-  console.log(`Error caught in HOME SECTION - Auto-typing: ${e}`);
-}
+//     //calling typing-function at every 300 milli-seconds
+//     setTimeout(typing, 200);
+//   })();
+// } catch (e) {
+//   console.log(`Error caught in HOME SECTION - Auto-typing: ${e}`);
+// }
 
 // RECENT WORK SECTION /TABS
 try {
@@ -114,7 +114,7 @@ try {
   const message = document.getElementById("message");
   const controls = document.querySelectorAll(".form-control");
   const loadingSpinner = document.getElementById('spinner'); //LOADING SPINNER
-  const binder = document.querySelector('#binder');
+  const main = document.querySelector('main');
   const body = document.querySelector('body');
 
   //Show input error messages
@@ -193,16 +193,16 @@ try {
       message: message.value,
     };
     loadingSpinner.style.display = "flex";
-    binder.style.opacity = '0.2';
+    main.style.opacity = '0.2';
     body.style.overflowY = 'hidden';
 
     emailjs
       .send(serivce_id, template_id, formData)
       .then((res) => {
-        binder.style.opacity = '1';
+        main.style.opacity = '1';
         body.style.overflowY = 'scroll';
         loadingSpinner.style.display = "none";
-        alert("Your Response Has Been Recorded Successfully.");
+        alert("Your Response Has Been Recorded Successfully !!");
         firstName.value = "";
         lastName.value = "";
         email.value = "";

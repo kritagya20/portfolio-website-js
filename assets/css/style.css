@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Serif+Pro:wght@200;300;400;600;700;900&display=swap');
 
-/* ---------------LALYOUT------------------ */
-    /* ROOT VARIABLES */
-    /* GENERALS */
-    /* BASE SECTIONS */
-    /* HEADER  (NAVBAR)  */
-    /* HOME */
-    /* SOCIAL-ICONS */
-/* --------------------------------- */
 
 /* ---------------ROOT VARIABLES------------------ */
 :root {
@@ -76,6 +68,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body.home {
     margin: 0 auto;
     width: 100%;
@@ -90,13 +87,12 @@ body.home {
     background: linear-gradient(96.3deg, #111 2%, #121212 33.84%, #1E3A8A 162.79%);
 }
 
-.binder {
-    max-width: 1600px;
-    width: 100%;
-    background: transparent;
-    margin: 0 auto;
-    overflow: hidden;
-}
+/* .binder { */
+    /* max-width: 1600px; */
+    /* width: 100%; */
+    /* background: transparent; */
+    /* margin: 0 auto; */
+/* } */
 
 .gradient__bg {
     background: radial-gradient(circle at 0% 45%, rgba(0,123,255,1) 10%, rgba(102,16,242,1) 45%);
@@ -387,8 +383,7 @@ img {
     display: flex;  
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1.5rem 1.5rem;
-    padding-bottom: 0;
+    padding: 0;
     text-align: center;
     justify-content: space-around;
     margin: 2rem 0;
@@ -410,12 +405,8 @@ img {
 }
 
 .home .left h1 .auto-typing {
-    font-size: var(--fs2);
+    font-size: var(--fs3);
     position: relative;
-    background: linear-gradient(to left, #6610f2, #6920e9, #6b2be0, #6d33d6, #6e3acd, #8039c5, #8f3abe, #9b3bb7, #b437ad, #c935a3, #da3797, #e83e8c);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .home .left p {

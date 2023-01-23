@@ -1,5 +1,0 @@
-=================================================[[upto 321px]]=========================================================
-(1) font-size : paragraph=15PX	h1=25PX		h2=22PX		table=18PX/15PX		link=13PX
-(2) font-weight : h1=700	
-(3) blurr-adius : 1px
-(4) box-shadow : 1px
