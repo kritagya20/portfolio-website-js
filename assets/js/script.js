@@ -1,4 +1,4 @@
-//NAVBAR SECTION
+s//NAVBAR SECTION
 
 window.addEventListener("scroll", () => {
   document
@@ -184,8 +184,8 @@ try {
 
   //sending email
   function sendEmail () {    
-    const serivce_id = "service_ep5wsq2";
-    const template_id = "template_9qk7m26";
+    const serivce_id = "";
+    const template_id = "";
     let formData = {
       firstName: firstName.value,
       lastName: lastName.value,
